@@ -1,6 +1,7 @@
 import { useState } from "react";
 import List from "./components/List";
 import Search from "./components/Search";
+import Item from "./components/Item";
 const welcome = {
   greeting: "Hey",
   title: "React is cool!",
@@ -8,7 +9,7 @@ const welcome = {
 function getTitle(obj) {
   return obj.title;
 }
-const list = [
+const array = [
   {
     title: "React",
     url: "https://react.dev/",
@@ -27,13 +28,14 @@ const list = [
   },
 ];
 
+
 function App() {
   return (
     <div>
       <h1>My Hacker Stories</h1>
       <Search />
       <hr />
-      <List list={list} />
+      <List Item ={Item} array = {array} />
     </div>
   );
 }

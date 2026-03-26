@@ -1,20 +1,11 @@
 
-function List({list}){
+function List({Item, array }){
    return( <div>
          <ul>
-        {list.map(function (item) {
-          return (
-            <li key={item.objectID}>
-              <span>
-                <a href={item.url}>{item.title + '  '}</a>
-              </span>
-              <p>{' Author: ' + item.author}</p>
-              <p>{' Comments: ' + item.num_comments + '.'}</p>
-              <span>{' Points: ' + item.points + '.'}</span>
-              <p />
-            </li>
-          );
-        })}
+          {
+           array.map((e) =>(
+            <Item key={e.objectID} element = {e}/>
+           ))}       
       </ul>
     </div>);
 }
