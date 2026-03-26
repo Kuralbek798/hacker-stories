@@ -1,5 +1,9 @@
+import Item from "./Item";
 
-function List({Item, array }){
+
+
+
+function List({array }){
    return( <div>
          <ul>
           {

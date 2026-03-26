@@ -1,7 +1,7 @@
 import { useState } from "react";
 import List from "./components/List";
 import Search from "./components/Search";
-import Item from "./components/Item";
+
 const welcome = {
   greeting: "Hey",
   title: "React is cool!",
@@ -35,7 +35,7 @@ function App() {
       <h1>My Hacker Stories</h1>
       <Search />
       <hr />
-      <List Item ={Item} array = {array} />
+      <List array = {array} />
     </div>
   );
 }
