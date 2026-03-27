@@ -7,20 +7,21 @@ import functions from "./functions";
 const {array} = functions;
 array
 function App() {
-  const[value, setValue] = useState('');
+  
   const[count, setCount] = useState(0)
  
-  function increaseCount(){
-   
-  setCount((count) => count +1);
-   
-  
-  }
-  
+  function increaseCount(){   
+  setCount((count) => count +1);  
+   }
+  const handleSearch = (event) => console.log(event.target.value);
+
+
+
+
   return (
     <div>
       <h1>My Hacker Stories</h1>
-      <Search value ={value} setValue = {setValue} />
+      <Search onSearch = {handleSearch} />
       <hr />
       <List array = {array} />
       <button type='button' onClick ={increaseCount}>
