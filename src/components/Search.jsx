@@ -1,20 +1,11 @@
-import { useState } from "react";
 
 
-const Search = (onSearch) => {
-  const[searchValue, setSearchValue] = useState('');
-  const handleChange = (event) =>{     
-   setSearchValue(event.target.value)
-   onSearch(event)
-  }
-  return (
-    <div>
+const Search = ({search,onSearch}) => (
+  //const{search, onSearch} = props;
+     <div>
       <label htmlFor="search">Search: </label>
-      <input id="search" type="text" value={searchValue} onChange={handleChange} />
-      <p>{'The value is: ' + searchValue}</p>
-    </div>
-    
-  );
-}
+      <input id="search" type="text" value ={search}  onChange={onSearch} />     
+    </div>    
+ );
 
 export default Search;
