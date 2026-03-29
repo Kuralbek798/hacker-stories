@@ -1,22 +1,22 @@
 
-const Item = ({element}) =>{
+const Item = ({element:{url, title,author, num_comments,points}} ) =>(
      
-          return (
+          
             <li>
               <span>
                 {
-                  <a href={element.url}>{element.title + '  '}</a>
+                  <a href={url}>{title + '  '}</a>
                 }
               </span>
-              <p>{ ' Author: ' + element.author}</p>
-              <p>{' Comments: ' + element.num_comments + '.'}</p>
-              <span>{' Points: ' + element.points + '.'}</span>
+              <p>{ ' Author: ' + author}</p>
+              <p>{' Comments: ' + num_comments + '.'}</p>
+              <span>{' Points: ' + points + '.'}</span>
               <p />
               
             </li>
-          );
+          
         
-}
+        );
 
 
 export default Item;
