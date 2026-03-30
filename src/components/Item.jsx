@@ -1,7 +1,6 @@
 
-const Item = ({element:{url, title,author, num_comments,points}} ) =>(
-     
-          
+const Item = ({url, title,author, num_comments,points} ) =>(
+               
             <li>
               <span>
                 {
@@ -11,12 +10,9 @@ const Item = ({element:{url, title,author, num_comments,points}} ) =>(
               <p>{ ' Author: ' + author}</p>
               <p>{' Comments: ' + num_comments + '.'}</p>
               <span>{' Points: ' + points + '.'}</span>
-              <p />
-              
-            </li>
-          
+              <p />              
+            </li>        
         
         );
-
 
 export default Item;

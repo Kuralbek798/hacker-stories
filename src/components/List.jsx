@@ -9,8 +9,8 @@ const totalComents = array.reduce((acc, curr) => acc + curr.num_comments,0);
     
          <ul>
           {            
-           array.map((e) =>(
-            <Item key={e.objectID} element = {e}/>
+           array.map(({objectID, ...item}) =>(
+            <Item key={objectID} {...item}/>
            ))
          //  array.filter((e) =>(e.title == "React"))
          //  .map((e) =>(
