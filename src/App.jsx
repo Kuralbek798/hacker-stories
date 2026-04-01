@@ -4,28 +4,35 @@ import Search from "./components/Search";
 import functions from "./functions";
 import { useEffect } from "react";
 
-const { array } = functions;
-array;
-function App() {
-  const [searchTerm, setSearchTerm] = useState(
-    localStorage.getItem("search") || "React",
-  );
+const stories = functions.stories;
+
+const useStorageState = (key, initialState) =>{
+  const [value, setValue] = useState(localStorage.getItem(key) || initialState);
+  useEffect(()=> {
+    localStorage.setItem(key, value);
+  }, [value, key]);  
+
+  return[value, setValue];
+};  
+
+const App = () => {
+  const [value, setValue] = useStorageState('search','React');
+
   const handleSearch = (event) => {
-    setSearchTerm(event.target.value);
-    localStorage.setItem("search", event.target.value);
+    setValue(event.target.value);
   };
-  useEffect(() => {
-    localStorage.setItem("search", searchTerm);
-  }, [searchTerm]);
+  const searchedStories = stories.filter((story) =>
+    story.title.toLowerCase().includes(value.toLowerCase()),
+  );
 
   return (
     <div>
       <h1>My Hacker Stories</h1>
-      <Search Search search={searchTerm} onSearch={handleSearch} />
+      <Search Search search={value} onSearch={handleSearch} />
       <hr />
-      <List array={array} />
+      <List array={stories} />
     </div>
   );
-}
+};
 
 export default App;

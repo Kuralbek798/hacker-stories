@@ -19,7 +19,8 @@ const totalComents = array.reduce((acc, curr) => acc + curr.num_comments,0);
         
          }      
       </ul>
-        {totalComents > 0 && <p><hr />{'total coments: ' + totalComents}</p> }       
+      <hr />
+        {totalComents > 0 && <p>{'total coments: ' + totalComents}</p> }       
     </div>);
 }
 
